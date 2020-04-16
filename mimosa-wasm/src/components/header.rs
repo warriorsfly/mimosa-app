@@ -14,7 +14,7 @@ pub struct Props {
 
 pub enum Msg {}
 
-impl Compenent for Header {
+impl Component for Header {
     type Message = Msg;
     type Properties = Props;
 
@@ -35,7 +35,7 @@ impl Compenent for Header {
         html! {
             <nav class="navbar navbar-light">
                 <div class="container">
-                    <RouterAnchor<AppRoute> route=AppRoute::Home class="navbar-brand">
+                    <RouterAnchor<AppRoute> route=AppRoute::Home classes="navbar-brand">
                         {"Mimosa"}
                     </RouterAnchor<AppRoute>>
                     {
@@ -71,6 +71,33 @@ impl Header {
                     </RouterAnchor<AppRoute>>
                 </li>
             </ul>
+        }
+    }
+
+    fn logged_in_view(&self, user_info: &UserInfo) -> Html {
+        html! {
+            <ul class="nav navbar-nav pull-xs-right">
+                 <li class="nav-item">
+                     <RouterAnchor<AppRoute> route=AppRoute::Home classes="nav-link">
+                         { "Home" }
+                     </RouterAnchor<AppRoute>>
+                 </li>
+                 <li class="nav-item">
+                     <RouterAnchor<AppRoute> route=AppRoute::EditorCreate classes="nav-link">
+                         { "New Post" }
+                     </RouterAnchor<AppRoute>>
+                 </li>
+                 <li class="nav-item">
+                     <RouterAnchor<AppRoute> route=AppRoute::Settings classes="nav-link">
+                         { "Settings" }
+                     </RouterAnchor<AppRoute>>
+                 </li>
+                 <li class="nav-item">
+                     <RouterAnchor<AppRoute> route=AppRoute::Profile(user_info.nick_name.clone())  classes="nav-link">
+                         { &user_info.nick_name }
+                     </RouterAnchor<AppRoute>>
+                 </li>
+             </ul>
         }
     }
 }
