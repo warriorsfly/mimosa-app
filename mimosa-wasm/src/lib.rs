@@ -19,6 +19,6 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 #[wasm_bindgen]
 pub fn run_app() -> Result<(), JsValue> {
     web_logger::init();
-    yew::start_app::<App>();
+    // yew::start_app::<App>();
     Ok(())
 }
