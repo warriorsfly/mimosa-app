@@ -1,14 +1,19 @@
+mod article;
 mod auth;
-mod tags;
+mod comment;
+mod profile;
+mod tag;
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
+pub use article::{Article, ArticleDto, ArticleDtoWrapper, ArticleList, ArticleWrapper};
 pub use auth::UserInfo;
-pub use tags::TagListInfo;
+pub use comment::{Comment, CommentDto, CommentDtoWrapper, CommentList, CommentWrapper};
+pub use profile::Profile;
+pub use tag::TagListInfo;
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
-#[serde(rename_all = "camelCase")]
 pub struct ErrorInfo {
     pub errors: HashMap<String, Vec<String>>,
 }
