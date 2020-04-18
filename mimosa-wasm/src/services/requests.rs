@@ -164,10 +164,10 @@ impl Requests {
         let body: Text = Json(&body).into();
         self.builder("PUT", url, body, callback)
     }
+}
 
-    /// Set limit for pagination
-    pub fn limit(count: u32, p: u32) -> String {
-        let offset = if p > 0 { p * count } else { 0 };
-        format!("limit={}&offset={}", count, offset)
-    }
+/// Set limit for pagination
+pub fn limit(count: u32, p: u32) -> String {
+    let offset = if p > 0 { p * count } else { 0 };
+    format!("limit={}&offset={}", count, offset)
 }
