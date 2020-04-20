@@ -1,3 +1,5 @@
+mod article;
+mod auth;
 mod requests;
 mod tags;
 

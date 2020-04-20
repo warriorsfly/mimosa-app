@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use super::Profile;
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
-pub struct Article {
+pub struct ArticleInfo {
     pub slug: String,
     pub title: String,
     pub discription: String,
@@ -17,18 +17,18 @@ pub struct Article {
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
-pub struct ArticleWrapper {
-    pub article: Article,
+pub struct ArticleInfoWrapper {
+    pub article: ArticleInfo,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
-pub struct ArticleList {
-    pub articles: Vec<Article>,
+pub struct ArticleListInfo {
+    pub articles: Vec<ArticleInfo>,
     pub articles_count: u32,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
-pub struct ArticleDto {
+pub struct ArticleInfoDto {
     pub title: String,
     pub description: String,
     pub body: String,
@@ -36,6 +36,6 @@ pub struct ArticleDto {
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
-pub struct ArticleDtoWrapper {
-    pub article: ArticleDto,
+pub struct ArticleInfoDtoWrapper {
+    pub article: ArticleInfoDto,
 }

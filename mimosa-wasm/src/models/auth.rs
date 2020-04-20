@@ -29,3 +29,14 @@ pub struct UserInfoWrapper {
 //     pub avatar200: String,
 //     pub avatar_source: String,
 // }
+
+#[derive(Serialize, Deserialize, Clone, Debug, Default)]
+pub struct LoginInfo {
+    pub phone: String,
+    pub password: String,
+}
+
+#[derive(Serialize, Deserialize, Clone, Debug)]
+pub struct LoginInfoWrapper {
+    pub user: LoginInfo,
+}
