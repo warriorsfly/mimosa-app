@@ -6,10 +6,10 @@ use super::Profile;
 pub struct ArticleInfo {
     pub slug: String,
     pub title: String,
-    pub discription: String,
+    pub description: String,
     pub body: String,
     pub author: Profile,
-    pub tag_list: Vec<String>,
+    pub tags: Vec<String>,
     pub created_at: chrono::NaiveDateTime,
     pub updated_at: chrono::NaiveDateTime,
     pub favorited: bool,

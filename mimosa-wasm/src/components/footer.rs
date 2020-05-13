@@ -33,4 +33,7 @@ impl Component for Footer {
             </footer>
         }
     }
+    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
+        todo!()
+    }
 }
